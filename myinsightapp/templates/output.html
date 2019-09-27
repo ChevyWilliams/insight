@@ -64,20 +64,26 @@
 	<h5 class="jumbotron-heading" align="center">Supporting you in leveling up your ideas</h5>
 	<br>
 
+<form action="/pitchidea" method="post">
+
 <div class="container text-center ">
-  <form action="/pitchidea" method="post">
     <!-- <form action="" method="post" novalidate> -->
+    <form action="/pitchidea" method="post">
       <div class="form-group">
             <label for="idea">Pitch your idea here:</label>
             <input type="text" class="form-control" id="idea" name="pitch" placeholder="Enter your idea here"></div>
             <button type="submit" class="btn btn-success">Submit</button>
 	   </div>
-  </form>
+   </form>
+
+     <div class="starter-template">
+       <p>Closest successful ideas to yours:</p>
+       <p>{{results}}</p>
+     </div>
+
 </div>
 
 </body>
-
-
 
 <!-- <footer class="text-muted">
     <div class="container">
