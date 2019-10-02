@@ -61,38 +61,38 @@
       <h1 class="jumbotron-heading" align="center">IdeaVetter</h1>
 
 	<br>
-	<h5 class="jumbotron-heading" align="center">Helping to make your ideas better</h5>
+	<h5 class="jumbotron-heading" align="center">Making your ideas better</h5>
 	<br>
 
 
 <div class="container text-center ">
   <form id = "input_data" action = "/pitchidea" method="POST">
     <div class="dropdown">
-      <p> Select Category: </p>
+      <p> Select Category:
         <select id = "customDropdown" name="selection">
           {% for category in categories %}
               <option value="{{category}}">{{category}}</option>
 
             {% endfor %}
-        </select>
-    </div>
-  </form>
+          </select>
+        </p>
+      </div>
 
-  <form id = "enter_idea" action="/pitchidea" method="post">
-    <div class="form-group">
-        <label for="idea">Pitch your idea here:</label>
-        <input type="text" class="form-control" id="idea" name="pitch" placeholder="Enter your idea here"></div>
-	  </div>
+      <div class="form-group">
+            <label for="idea">Pitch your idea here:</label>
+            <input type="text" class="form-control" id="idea" name="pitch" placeholder="Enter your idea here"></div>
+      </div>
   </form>
 </div>
-  
-<div class="container text-center ">
-    <!-- <div class="starter-template"> -->
-       <p>Closest successful ideas to yours:</p>
-       <p><a href>{{output_url1}}</a></p>
-       <p><a href>{{output_url2}}</a></p>
-       <p><a href>{{output_url3}}</a></p>
-     <!-- </div> -->
+
+
+<div class="container text-left ">
+    <div class="starter-template">
+       <p>Past successful projects most similar to your idea (No. of backers, Amount pledged):</p>
+       <p><a href = "{{output_url1}}">{{name1}}</a>&nbsp;&nbsp;&nbsp;&nbsp;{{backers1}}&nbsp;backers&nbsp;&nbsp;&nbsp;&nbsp;${{pledged1}}&nbsp;raised</p>
+       <p><a href = "{{output_url2}}">{{name2}}</a>&nbsp;&nbsp;&nbsp;&nbsp;{{backers2}}&nbsp;backers&nbsp;&nbsp;&nbsp;&nbsp;${{pledged2}}&nbsp;raised</p>
+       <p><a href = "{{output_url3}}">{{name3}}</a>&nbsp;&nbsp;&nbsp;&nbsp;<{{backers3}}&nbsp;backers&nbsp;&nbsp;&nbsp;&nbsp;${{pledged3}}&nbsp;raised</p>
+     </div>
 </div>
 
 </body>
