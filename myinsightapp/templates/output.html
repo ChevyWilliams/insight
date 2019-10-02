@@ -61,26 +61,38 @@
       <h1 class="jumbotron-heading" align="center">IdeaVetter</h1>
 
 	<br>
-	<h5 class="jumbotron-heading" align="center">Supporting you in leveling up your ideas</h5>
+	<h5 class="jumbotron-heading" align="center">Helping to make your ideas better</h5>
 	<br>
 
-<form action="/pitchidea" method="post">
 
 <div class="container text-center ">
-    <!-- <form action="" method="post" novalidate> -->
-    <form action="/pitchidea" method="post">
-      <div class="form-group">
-            <label for="idea">Pitch your idea here:</label>
-            <input type="text" class="form-control" id="idea" name="pitch" placeholder="Enter your idea here"></div>
-            <button type="submit" class="btn btn-success">Submit</button>
-	   </div>
-   </form>
+  <form id = "input_data" action = "/pitchidea" method="POST">
+    <div class="dropdown">
+      <p> Select Category: </p>
+        <select id = "customDropdown" name="selection">
+          {% for category in categories %}
+              <option value="{{category}}">{{category}}</option>
 
-     <div class="starter-template">
+            {% endfor %}
+        </select>
+    </div>
+  </form>
+
+  <form id = "enter_idea" action="/pitchidea" method="post">
+    <div class="form-group">
+        <label for="idea">Pitch your idea here:</label>
+        <input type="text" class="form-control" id="idea" name="pitch" placeholder="Enter your idea here"></div>
+	  </div>
+  </form>
+</div>
+  
+<div class="container text-center ">
+    <!-- <div class="starter-template"> -->
        <p>Closest successful ideas to yours:</p>
-       <p>{{results}}</p>
-     </div>
-
+       <p><a href>{{output_url1}}</a></p>
+       <p><a href>{{output_url2}}</a></p>
+       <p><a href>{{output_url3}}</a></p>
+     <!-- </div> -->
 </div>
 
 </body>
