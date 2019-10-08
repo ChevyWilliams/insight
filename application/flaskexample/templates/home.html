@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <!-- <link rel="icon" href="../static/favicon.png"> -->
+    <title>IdeaVetter</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="../static/album.css" rel="stylesheet"> -->
+
+</head>
+
+<body>
+<header>
+    <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-7 py-4">
+                    <h4 class="text-white">About</h4>
+                    <p class="text-muted">This application was created by Chevy Williams during the Insight Data Science fellowship
+                        in the fall of 2019. The goal is to provide a decision support tool for people and companies looking to gauge the potential success of an early stage idea.</p>
+                </div>
+                <div class="col-sm-4 offset-md-1 py-4">
+                    <h4 class="text-white">Contact</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="https://github.com/chevywilliams" class="text-white" target="_blank">My github</a>
+                        </li>
+                        <li><a href="chevy@metrixmaven.com" class="text-white" target="_blank">Email me</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+            <a href="/" class="navbar-brand d-flex align-items-center">
+                <strong>Home</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
+                    aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<body>
+<div class="bg-image">
+	<div class="main-center-div">
+  	<br><br>
+      <h1 class="jumbotron-heading" align="center">IdeaVetter</h1>
+
+	<br>
+	<h5 class="jumbotron-heading" align="center">Making your ideas better</h5>
+	<br>
+
+<div class="container text-center ">
+
+  <form id = "input_data" action = "/pitchidea" method="POST">
+    <div class="dropdown">
+      <p> Select Category:
+        <select id = "customDropdown" name="selection">
+          {% for category in categories %}
+              <option value="{{category}}">{{category}}</option>
+              <!-- <option value="category">Books/Zine/Print </option>
+              <option value="dresses">Crafts/Textiles </option>
+              <option value="outerwear">Design/Architecture </option>
+              <option value="bras">Fashion/Apparel </option>
+              <option value="bras">Food/Beverage </option>
+              <option value="bras">Games/Gaming</option>
+              <option value="bras">Music </option>
+              <option value="bras">Performance Art </option>
+              <option value="bras">Spaces/Places/Events</option>
+              <option value="bras">Tech/Web</option>
+              <option value="bras">TV/Film/Webseries </option>
+              <option value="bras">Other </option> -->
+          {% endfor %}
+          </select>
+        </p>
+      </div>
+
+      <div class="form-group">
+            <label for="idea">Pitch your idea here:</label>
+            <input type="text" class="form-control" id="idea" name="pitch" placeholder="Enter your idea here"></div>
+            <button type="submit" class="btn btn-success">Submit</button>
+	   </div>
+  </form>
+</div>
+
+</body>
+
+
+
+<!-- <footer class="text-muted">
+    <div class="container">
+        <p class="float-right">
+            <a href="#">Back to top</a>
+        </p>
+        <p> &copy; IdeaVetter 2019</p>
+    </div>
+</footer> -->
+
+<!-- more bootstrap stuff -->
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../static/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="../static/js/bootstrap.bundle.min.js"
+        integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+        crossorigin="anonymous">
+</script>
+
+</html>
