@@ -146,6 +146,7 @@ def ideavetter():
 
         # clean and tokenize user input
         clean_input = cleaner(text)
+        print(clean_input)
 
         # apply vectors to clean_input
         input_vec = get_vectors_norm(clean_input)
@@ -155,9 +156,13 @@ def ideavetter():
 
 
         # sort dataframe in ascending order by distance
-        df.sort_values(by=['cos_sim'], ascending = False, inplace = True)
+        # df[['cos_sim']].to_csv('before_sort.csv')
+        df.sort_values(by=['cos_sim'], ascending = True, inplace = True)
+        # df[['cos_sim']].to_csv('after_sort.csv')
         df_results = df[df['state'] == 'successful'].head(3)
+        print(df['cos_sim'].head(3))
         df_results = df_results.reset_index(drop=True)
+        print(df['cos_sim'].head(3))
 
         # return url for top 6 rows
         output_url1 = df_results.at[0,'urls.web.project']
